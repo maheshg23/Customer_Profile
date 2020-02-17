@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Profile Information</title>
+    <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'> -->
+    <link rel="stylesheet" type ="text/css" href="styles.css">
+  </head>
+  <body>
+    <h1 align="center">Customer Profile Information</h1>
+    <div class = "table-col">
+      <table class="scrolldown" align = "center"> 
+        <thead >
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody >
+          <% for(var i=0; i<users.length; i++) {%>
+          <tr>
+            <td><%= users[i].name %></td>
+            <td><%= users[i].email %></td>
+            <td><%= users[i].phone %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="input-col">
+      <h2>Insert Records </h2>
+      <form action="/users" method="POST">
+        <input type="text" placeholder="name" name="name"><br />
+        <input type="text" placeholder="email" name="email"><br />
+        <input type="text" placeholder="phone" name="phone"><br />
+        <button type="submit">Insert</button>
+      </form>
+
+      <h2>Modify the record </h2>
+      <input type="text" placeholder="modifyname" name="modifyname"><br />
+      <input type="text" placeholder="modifyemail" name="modifyemail"><br />
+      <input type="text" placeholder="modifyphone" name="modifyphone"><br />
+      <button id="update"> Update </button>
+
+      <h2>Delete the record </h2>
+      <input type="text" placeholder="delname" name="delname"><br />
+      <button id="delete"> Delete </button>
+
+    </div>
+
+    <script src="main.js"></script>
+
+  </body>
+</html>
+
